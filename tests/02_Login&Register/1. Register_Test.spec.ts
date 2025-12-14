@@ -8,6 +8,7 @@ test.beforeEach(async ({ page }) => {
 
 test.afterEach(async ({ page }) => {
     await page.waitForTimeout(2000);
+    await page.screenshot({ path: './Screenshots/RegisterPageScreenshot.png', fullPage: true });
 })
 
 test('Test Register with invalid credentials', async ({ page }) => {
@@ -72,16 +73,17 @@ test('Test Register with valid Credentials but not accepting the terms & conditi
 
 test('Test Register with valid Credentials and Login', async ({ page }) => {
 
+
     await page.locator("//button[normalize-space()='Get Started']").click()
     await page.locator("//a[normalize-space()='As a baker']").click()
-    await page.getByPlaceholder('youremail@email.com').fill("feha5956@bialode.com");
+    await page.getByPlaceholder('youremail@email.com').fill("yihatid361@discounp.com");
     await page.locator("//input[@name='password']").fill('12345678Tar!')
     await page.locator("//input[@name='confirm_password']").fill('12345678Tar!')
     await page.locator('[name="accepted_terms"]').click();
     await page.getByText('Sign Up').click();
     await expect(page.locator("//button[normalize-space()='Log In']")).toBeVisible();
 
-    await page.locator("//input[contains(@placeholder,'youremail@email.com')]").fill('faseha5956@bialode.com')
+    await page.locator("//input[contains(@placeholder,'youremail@email.com')]").fill('yihatid361@discounp.com')
     await page.locator("//input[@placeholder='******']").fill('12345678Tar!')
     await page.locator("//button[normalize-space()='Log In']").click();
     await expect(page.locator("//span[normalize-space()='Profile']")).toBeVisible();

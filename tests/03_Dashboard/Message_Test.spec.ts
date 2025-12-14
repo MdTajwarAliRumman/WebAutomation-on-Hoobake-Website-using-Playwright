@@ -7,7 +7,7 @@ test.beforeEach(async ({ page }) => {
     console.log('running before each tests.........')
 
     await page.locator("//button[normalize-space()='Sign in']").click()
-    await page.locator("//input[contains(@placeholder,'youremail@email.com')]").fill('magif69413@bialode.com')
+    await page.locator("//input[contains(@placeholder,'youremail@email.com')]").fill('yihatid361@discounp.com')
     await page.locator("//input[@placeholder='******']").fill('12345678Tar!')
     await page.locator("//button[normalize-space()='Log In']").click();
     // await expect(page.locator("//button[normalize-space()='Log In']")).toBeVisible();
@@ -17,6 +17,8 @@ test.beforeEach(async ({ page }) => {
 
 test.afterEach(async ({ page }) => {
     await page.waitForTimeout(2000);
+    await page.screenshot({ path: './Screenshots/MessagePageScreenshot.png', fullPage: true });
+
 })
 
 test('Testing The AI chat if it works properly or not', async ({ page }) => {

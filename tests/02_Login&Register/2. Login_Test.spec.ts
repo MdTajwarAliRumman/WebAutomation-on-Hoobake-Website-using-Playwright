@@ -51,7 +51,7 @@ test('Test login with fields being empty', async ({ page }) => {
 test('Test login with Valid Credentials', async ({ page }) => {
 
     await page.locator("//button[normalize-space()='Sign in']").click()
-    await page.locator("//input[contains(@placeholder,'youremail@email.com')]").fill('fatiya9402@cexch.com')
+    await page.locator("//input[contains(@placeholder,'youremail@email.com')]").fill('yihatid361@discounp.com')
     await page.locator("//input[@placeholder='******']").fill('12345678Tar!')
     await page.locator("//button[normalize-space()='Log In']").click();
     await expect(page.locator("//button[normalize-space()='Log In']")).toBeVisible();

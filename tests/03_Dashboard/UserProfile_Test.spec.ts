@@ -5,7 +5,7 @@ test.beforeEach(async ({ page }) => {
     console.log('running before each tests.........')
 
     await page.locator("//button[normalize-space()='Sign in']").click()
-    await page.locator("//input[contains(@placeholder,'youremail@email.com')]").fill('magif69413@bialode.com')
+    await page.locator("//input[contains(@placeholder,'youremail@email.com')]").fill('fiyigi1374@discounp.com')
     await page.locator("//input[@placeholder='******']").fill('12345678Tar!')
     await page.locator("//button[normalize-space()='Log In']").click();
     // await expect(page.locator("//button[normalize-space()='Log In']")).toBeVisible();
@@ -14,6 +14,7 @@ test.beforeEach(async ({ page }) => {
 
 test.afterEach(async ({ page }) => {
     await page.waitForTimeout(2000);
+    await page.screenshot({ path: './Screenshots/ProfilePageScreenshot.png', fullPage: true });
 })
 
 test('Test User profile different sections and fields', async ({ page }) => {
@@ -34,6 +35,5 @@ test('Test User profile different sections and fields', async ({ page }) => {
     await page.locator('input[name="zip_code"]').fill('1234');
     await page.locator('select[name="language"]').selectOption('Bengali');
     await page.getByRole('button', { name: 'Save' }).first().click();
-
 
 });

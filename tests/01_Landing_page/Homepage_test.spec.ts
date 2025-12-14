@@ -7,6 +7,7 @@ test.beforeEach(async ({ page }) => {
 })
 
 test.afterEach(async ({ page }) => {
+    await page.screenshot({ path: './Screenshots/FullHomePageScreenshot.png', fullPage: true });
     await page.waitForTimeout(2000);
 })
 
@@ -15,7 +16,6 @@ test('Test the Title, URL & Get-Started Button', async ({ page }) => {
     await expect(page).toHaveTitle("Hoobake")
     await expect(page).toHaveURL('https://danchaq-frontend.vercel.app/')
     await expect(page.locator("//button[normalize-space()='Get Started']")).toHaveText('Get Started');
-
 });
 
 test('Test The Ai chat option', async ({ page }) => {
